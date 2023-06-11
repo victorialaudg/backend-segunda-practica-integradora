@@ -5,7 +5,7 @@ addForm.addEventListener("submit", async (e) => {
     const title = document.getElementById("title").value
     const description = document.getElementById("description").value
     const price = document.getElementById("price").value
-    const thumbnail = document.getElementById("thumbnail").value
+    const photo = document.getElementById("photo").value
     const stock = document.getElementById("stock").value
     const category = document.getElementById("category").value
 
@@ -19,7 +19,7 @@ addForm.addEventListener("submit", async (e) => {
             title,
             description,
             price: +price,
-            thumbnail,
+            photo,
             stock: +stock,
             category
         })

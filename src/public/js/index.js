@@ -5,6 +5,7 @@ const socket = io()
 socket.on('updatedProducts', data => {
     table.innerHTML = 
         `<tr>
+            <td><strong>Foto</strong></td>
             <td><strong>Producto</strong></td>
             <td><strong>Descripción</strong></td>
             <td><strong>Precio</strong></td>
@@ -15,7 +16,9 @@ socket.on('updatedProducts', data => {
         for (product of data) {
             let tr = document.createElement('tr')
             tr.innerHTML=
-                        `   <td>${product.title}</td>
+                        `   <td>${product.photo}</td>
+                            <td>${product.title}</td>
+                            <td>${product.type}</td>
                             <td>${product.description}</td>
                             <td>${product.price}</td>
                             <td>${product.code}</td>

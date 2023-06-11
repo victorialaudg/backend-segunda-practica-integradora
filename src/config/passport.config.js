@@ -61,12 +61,15 @@ const initializePassport = () => {
         }
     }))
 
+
     passport.use('jwt', new JWTStrategy({
         jwtFromRequest: ExtractJWT.fromExtractors([extractCookie]),
         secretOrKey: JWT_PRIVATE_KEY
     }, async (jwt_payload, done) => {
         done(null, jwt_payload)
     }))
+
+
 
     passport.serializeUser((user, done) => {
         done(null, user._id)

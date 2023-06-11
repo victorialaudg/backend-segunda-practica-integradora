@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { application, Router } from "express";
 import passport from "passport";
 import { JWT_COOKIE_NAME } from '../utils.js'
 
@@ -33,6 +33,7 @@ router.post('/login', passport.authenticate('login', { failureRedirect: '/sessio
 router.get('/faillogin', (req, res) => {
     res.send({error: "Fail Login"})
 })
+
 
 // Cerrar Session
 router.get('/logout', (req, res) => {
